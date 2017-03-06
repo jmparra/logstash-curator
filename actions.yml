@@ -7,6 +7,9 @@ actions:
       continue_if_exception: False
       disable_action: False
     filters:
+      - filtertype: pattern
+        kind: regex
+        value: ^(logstash-|filebeat-|metricbeat-).*$
       - filtertype: age
         source: name
         direction: older
