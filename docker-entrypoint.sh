@@ -9,7 +9,7 @@ fi
 
 # Step down via gosu  
 if [ "$1" = 'curator' ]; then
-	exec gosu curator bash -c "while true; do curator --config config.yml actions.yml; set -e; sleep $(( 60*60*INTERVAL_IN_HOURS )); set +e; done"
+	exec gosu curator bash -c "curator --config config.yml actions.yml"
 fi
 
 # As argument is not related to curator,
